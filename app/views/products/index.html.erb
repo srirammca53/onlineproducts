@@ -1,0 +1,27 @@
+<h1>Listing products</h1>
+
+<% if user_signed_in? %>
+
+<% @products.each do |product| %>
+<table border=1 bgcolor="black"> 
+  <tr>
+    <td width="300px">Title</td>
+    <td width="300px">
+    <%= link_to"#{product.title}" , product %>&nbsp; <%= link_to 'Destroy', product, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+    <tr>
+    <td width="300px">Description</td>
+    <td width="300px"><%= product.description %></td>
+    </tr>
+    <td width="300px">Price</td>
+    <td width="300px"><%= product.price %></td>
+    </tr>
+    </table>
+    <br>
+<% end %>
+
+
+<br />
+<%= link_to 'New Product', new_product_path %>
+<% end %> 
+
