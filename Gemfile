@@ -10,6 +10,7 @@ gem "paperclip", "~> 2.3"
 gem 'devise', '1.1.rc0' 
 gem 'aws-s3'
 gem 'pg'
+gem 'will_paginate'
 # Use unicorn as the web server
 # gem 'unicorn'
 

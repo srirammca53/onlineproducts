@@ -1,21 +1,40 @@
-<!DOCTYPE html>
+
 <html>
 <head>
-  <title>Products</title>
+
+    <title>Products</title>
   <%= stylesheet_link_tag :all %>
   <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tag %>
+    
 </head>
-<body>
-<div id="user_nav">
+<body background="/images/mybg.jpg">
+<center>
+<h1><font color="white">ONLINE PRODUCTS</font></h1>
+</center>
+<div>
 <% if user_signed_in? %>
 Signed in as <%= current_user.email %>. Not you?
 <%= link_to "Sign out", destroy_user_session_path %>
 <% else %>
 <%= link_to "Sign up", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %>
 <% end %>
-</div> 
-<%= yield %>
+</div>
+<hr/>
+<center>
+
+<table width=960 height="20" border=1 bgcolor=black">
+<tr>
+<td width="240px"><font color="white"><b>HOME</b></font></td>
+<td width="240px"><font color="white"><b>ABOUT US</b></font></td>
+<td width="240px"><font color="white"><b>FUTURE PRODUCTS</b></font></td>
+<td width="240px"><font color="white"><b>HOW TO BUY</b></font></td>
+</tr>
+</table>
+</center>
+<p><%= yield %></p>
+
+               
 
 </body>
 </html>

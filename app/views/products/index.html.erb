@@ -1,5 +1,12 @@
 <h1>Listing products</h1>
-
+<%= link_to 'New Product', new_product_path %>
+<% if !user_signed_in? %>
+<marquee bgcolor="black" behaviour="alternate">
+<font color="yellow"> Please sigin in before you add a product or to sell your product......</font>
+</marquee>
+<% end %>
+<br/>
+<br/>
 <% if user_signed_in? %>
 
 <% @products.each do |product| %>
@@ -22,6 +29,6 @@
 
 
 <br />
-<%= link_to 'New Product', new_product_path %>
-<% end %> 
 
+<% end %> 
+<%= will_paginate @articles, :param_name =>'page' %>
