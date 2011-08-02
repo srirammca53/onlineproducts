@@ -7,14 +7,14 @@
 <% end %>
 <br/>
 <br/>
-<% if user_signed_in? %>
+
 
 <% @products.each do |product| %>
 <table border=1 bgcolor="black"> 
   <tr>
     <td width="300px">Title</td>
     <td width="300px">
-    <%= link_to"#{product.title}" , product %>&nbsp; <%= link_to 'Destroy', product, :confirm => 'Are you sure?', :method => :delete %></td>
+    <%= link_to"#{product.title}" , product %>&nbsp;<% if user_signed_in? %> <%= link_to 'Destroy', product, :confirm => 'Are you sure?', :method => :delete %><% end %> </td>
     </tr>
     <tr>
     <td width="300px">Description</td>
@@ -30,5 +30,6 @@
 
 <br />
 
-<% end %> 
+
+
 <%= will_paginate @articles, :param_name =>'page' %>
